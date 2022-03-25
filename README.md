@@ -1,2 +1,2 @@
 # Todo App 
-Create to do app using angular Framework
+Todo app using angular Framework
