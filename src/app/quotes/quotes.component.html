@@ -1,1 +1,16 @@
-<p>quotes works!</p>
+<div class="quote-page">
+  <img class="image" src="https://media.discordapp.net/attachments/857145728917045328/889969275069149264/2_1-01.png?width=618&height=458" alt="imag">
+  <div class="quote-desc">
+  <h2 class="title">Quotation</h2>
+
+  <div class="quote-container">
+    <p class="quote">
+      {{ quote$.content }}
+    </p>
+    <span class="author"> {{ quote$.author }}</span>
+  </div>
+  <button class="btn-quote"
+  (click)="getQuote()"
+  >New Quote</button>
+</div>
+</div>

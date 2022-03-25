@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Acme&family=Caveat&display=swap");
+
+.quote-page {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 1rem;
+  font-family: "Playfair Display", serif;
+  justify-content: space-evenly;
+}
+.quote-desc {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 300px;
+}
+.title {
+  font-weight: bold;
+  color: #563D7C;
+}
+.quote-container {
+  background-color: #8977a5;
+  text-align: center;
+  width: 70%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 10px;
+  border-radius: 15px;
+  color: #fff;
+}
+.quote {
+  font-family: "Acme", sans-serif;
+  font-size: 30px;
+  max-width: 90%;
+  text-align: center;
+}
+.author {
+  text-align: right;
+}
+
+.btn-quote {
+  width: 120px;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background-color: #563d7c;
+  color: #fff;
+  box-shadow: 0 0.2rem rgb(121 121 121 / 65%);
+}
+.image {
+  width: 40%;
+}
+
+
