@@ -5,8 +5,8 @@ import  {TodoComponent} from './todo/todo.component';
 import { NotFoundComponent} from './not-found/not-found.component';
 const routes: Routes = [ 
   {path:"todo",component:TodoComponent},
-  {path:"quotes",component:QuotesComponent},
-  {path:"",redirectTo:"todo" , pathMatch:"full"},
+  {path:"",component:QuotesComponent},
+  {path:"quotes",redirectTo:"" , pathMatch:"full"},
   {path:"**",component:NotFoundComponent},
 ];
 
