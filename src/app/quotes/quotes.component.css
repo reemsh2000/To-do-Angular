@@ -39,7 +39,7 @@
 .quote {
   font-family: "Acme", sans-serif;
   font-size: 30px;
-  max-width: 90%;
+  min-width: 90%;
   text-align: center;
 }
 .author {
@@ -59,4 +59,21 @@
   width: 40%;
 }
 
-
+@media (max-width:700px) {
+  .image{
+    display: none;
+    visibility: hidden;
+  }
+  .quote-desc{
+    width: 100%;
+    padding-top: 50px;
+    height: 350px;
+  }
+  .quote{
+    line-height: 1.4;
+    font-size: 16px;
+  }
+  .btn-quote {
+    margin-top: 10px;
+  }
+}
