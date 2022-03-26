@@ -1,1 +1,34 @@
-<p>todo works!</p>
+<div class="todo-page">
+  <h1 class="todo-title">ToDo List</h1>
+  <div class="input-container">
+    <input type="text" id="newTask" placeholder="New Task" #taskModel  />
+    <button (click)="addTask(taskModel)">+</button>
+  </div>
+
+  <ul class="list" *ngFor="let task of todos">
+    <li class="list-item">
+      <label class="checkbox-element">
+        <input type="checkbox" name="isDone" [checked]="task.done"
+        (click)="changeDoneStatus(task.id)"
+        />
+        <span class="check"></span>
+      </label>
+      <input type="text" [value]="task.task" [disabled]="!task.canEdit"
+      [class.canedit]="task.canEdit" #editTaskInput
+      (pointerup)="editMode=true"
+       />
+      <mat-icon aria-hidden="false" class="icon" aria-label="edit"
+      (click)="editTask(task.id,editTaskInput)"
+  
+        >edit</mat-icon
+      >
+      <mat-icon
+        aria-hidden="false"
+        class="icon"
+        aria-label="clear"
+        (click)="deleteTask(task.id)"
+        >clear</mat-icon
+      >
+    </li>
+  </ul>
+</div>
