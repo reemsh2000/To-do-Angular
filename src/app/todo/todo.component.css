@@ -2,7 +2,7 @@
   width: 70%;
   margin: 10px auto;
   padding: 20px 0;
-  min-height: 70vh;
+  min-height: 80vh;
   display: flex;
   border-radius: 15px;
   flex-direction: column;
@@ -126,4 +126,16 @@ input[type="checkbox"] {
 
 .done{
   text-decoration: line-through;
+}
+
+@media (max-width:700px) {
+  .todo-page{
+    width: 100%;
+  }
+  .input-container{
+    width:90%;
+  }
+  .list{
+ width:85%
+  }
 }
