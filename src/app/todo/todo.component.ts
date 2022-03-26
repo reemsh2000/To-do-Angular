@@ -8,18 +8,16 @@ import { ToDoService } from './todo.service';
 export class TodoComponent implements OnInit {
   editMode = false;
   todos: any = [];
-  tasksLength = 0;
   constructor(private todoService: ToDoService) {}
 
   ngOnInit() {
     this.todos = this.todoService.getTasks();
-    this.tasksLength = this.todos.length;
   }
   addTask(task: any) {
     if (task.value.trim() !== '') {
       this.todoService.addNewTask({
         task: task.value,
-        id: this.tasksLength,
+        id: this.todos.length ? this.todos.length :0,
         done: false,
         canEdit: false,
       });
