@@ -53,6 +53,7 @@
   border: none;
   background-color: #563d7c;
   color: #fff;
+  margin-top: 10px;
   box-shadow: 0 0.2rem rgb(121 121 121 / 65%);
 }
 .image {
