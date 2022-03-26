@@ -17,7 +17,7 @@ export class TodoComponent implements OnInit {
     if (task.value.trim() !== '') {
       this.todoService.addNewTask({
         task: task.value,
-        id: this.todos?.length ? this.todos[length-1].id+1 :1,
+        id: this.todoService.getTasks().length ? this.todoService.getTasks()[length-1].id+1 :1,
         done: false,
         canEdit: false,
       });
