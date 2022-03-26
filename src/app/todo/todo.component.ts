@@ -15,10 +15,12 @@ export class TodoComponent implements OnInit {
   }
   addTask(task: any) {
     if (task.value.trim() !== '') {
-      this.todoService.getTasks()
       this.todoService.addNewTask({
         task: task.value,
-        id: this.todoService.getTasks()?.length ? this.todoService.getTasks()[length].id + 1 :1,
+        id: this.todoService.getTasks()?.length
+          ? this.todoService.getTasks()[this.todoService.getTasks().length - 1]
+              .id + 1
+          : 1,
         done: false,
         canEdit: false,
       });
@@ -33,17 +35,25 @@ export class TodoComponent implements OnInit {
   }
 
   editTask(taskId: number, editTaskInput: any) {
-    this.todos[taskId - 1].canEdit = !this.todos[taskId - 1].canEdit;
-    this.todos[taskId - 1].done = false;
-    if (this.editMode) {
-      this.todos[taskId - 1].task = editTaskInput.value;
-      this.todoService.EditTask(this.todos);
-      this.todos[taskId - 1].canEdit = false;
-    }
-    this.editMode = false;
+    this.todos.find((task: any) => {
+      if (task.id === taskId) {
+        task.canEdit = !task.canEdit;
+        task.done = false;
+        if (this.editMode) {
+          task.task = editTaskInput.value;
+          this.todoService.EditTask(this.todos);
+          task.canEdit = false;
+        }
+        this.editMode = false;
+      }
+    });
   }
   changeDoneStatus(taskId: any) {
-    this.todos[taskId - 1].done = !this.todos[taskId - 1].done;
-    this.todoService.EditTask(this.todos);
+    this.todos.find((task: any) => {
+      if (task.id === taskId) {
+        task.done = !task.done;
+        this.todoService.EditTask(this.todos);
+      }})
+  
   }
 }
