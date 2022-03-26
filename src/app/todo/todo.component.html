@@ -15,6 +15,7 @@
       </label>
       <input type="text" [value]="task.task" [disabled]="!task.canEdit"
       [class.canedit]="task.canEdit" #editTaskInput
+      [class.done]="task.done"
       (pointerup)="editMode=true"
        />
       <mat-icon aria-hidden="false" class="icon" aria-label="edit"
